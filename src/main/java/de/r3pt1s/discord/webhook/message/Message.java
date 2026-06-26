@@ -45,9 +45,9 @@ public final class Message implements Writeable {
     private final List<String> threadAppliedTags = new ArrayList<>();
     private Poll poll = null;
 
-    private final boolean wait;
-    private final String threadId;
-    private final boolean withComponents;
+    private boolean wait;
+    private String threadId;
+    private boolean withComponents;
     private final Webhook webhook;
 
     /**
@@ -69,6 +69,29 @@ public final class Message implements Writeable {
 
     public Message() {
         this(false, null, false, null);
+    }
+
+    public Message wait(boolean wait) {
+        this.wait = wait;
+        return this;
+    }
+
+    public Message threadId(String threadId) {
+        this.threadId = threadId;
+        return this;
+    }
+
+    public Message withComponents(boolean withComponents) {
+        this.withComponents = withComponents;
+        return this;
+    }
+
+    public Message withComponents() {
+        return withComponents(true);
+    }
+
+    public Message withoutComponents() {
+        return withComponents(false);
     }
 
     /**
