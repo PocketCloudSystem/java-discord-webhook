@@ -54,4 +54,11 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/PocketCloudSystem/java-discord-webhook</url>
+        </repository>
+    </distributionManagement>
 </project>
