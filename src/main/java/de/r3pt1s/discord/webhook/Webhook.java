@@ -60,7 +60,6 @@ public final class Webhook {
     public CompletableFuture<WebhookResponse> send(Message message) {
         try {
             String targetUrl = buildUrl(message);
-            System.out.println(targetUrl);
             Map<String, Object> data = message.write();
             boolean hasFiles = !message.getFiles().isEmpty();
 
@@ -92,7 +91,6 @@ public final class Webhook {
         data.remove("files");
 
         String json = OBJECT_MAPPER.writeValueAsString(data);
-        System.out.println(json);
         return HttpRequest.newBuilder()
                 .uri(URI.create(targetUrl))
                 .timeout(Duration.ofSeconds(10))

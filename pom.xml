@@ -7,7 +7,7 @@
 
     <groupId>de.pocketcloud</groupId>
     <artifactId>discord-webhook</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>discord-webhook</name>
