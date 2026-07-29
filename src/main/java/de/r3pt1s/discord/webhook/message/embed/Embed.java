@@ -4,6 +4,7 @@ import de.r3pt1s.discord.webhook.util.WebhookHelper;
 import de.r3pt1s.discord.webhook.util.Writeable;
 import lombok.Getter;
 
+import java.awt.*;
 import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
@@ -67,9 +68,8 @@ public final class Embed implements Writeable {
         return this;
     }
 
-    public Embed setColor(Integer color) {
-        this.color = color;
-        return this;
+    public Embed setColor(Color color) {
+        return setColorRgb(color.getRed(), color.getGreen(), color.getBlue());
     }
 
     public Embed setColorRgb(int red, int green, int blue) {
